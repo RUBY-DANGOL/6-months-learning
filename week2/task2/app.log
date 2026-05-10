@@ -1,0 +1,90 @@
+2026-05-10 14:30:28,175 | ERROR | app.database | Failed to create database engine: no pq wrapper available.
+Attempts made:
+- couldn't import psycopg 'c' implementation: No module named 'psycopg_c'
+- couldn't import psycopg 'binary' implementation: cannot import name 'pq' from 'psycopg_binary' (C:\Users\rubin\OneDrive\Desktop\AI fellow\week2\task2\.venv\Lib\site-packages\psycopg_binary\__init__.py)
+- couldn't import psycopg 'python' implementation: libpq library not found
+2026-05-10 14:31:24,172 | INFO | app.database | Database engine created
+2026-05-10 14:31:24,203 | INFO | app.main | Creating database tables if missing
+2026-05-10 14:36:18,962 | INFO | app.routers.customers | POST /customers
+2026-05-10 14:36:18,962 | INFO | app.crud | Creating customer name=Alice Johnson
+2026-05-10 14:36:18,995 | INFO | app.database | Database session closed
+2026-05-10 14:38:01,872 | INFO | app.database | Database engine created
+2026-05-10 14:38:01,906 | INFO | app.main | Creating database tables if missing
+2026-05-10 14:38:04,434 | INFO | app.database | Database engine created
+2026-05-10 14:38:04,454 | INFO | app.main | Creating database tables if missing
+2026-05-10 14:39:01,890 | INFO | app.routers.customers | POST /customers
+2026-05-10 14:39:01,890 | INFO | app.crud | Creating customer customerNumber=9999
+2026-05-10 14:39:01,949 | INFO | app.database | Database session closed
+2026-05-10 14:41:01,143 | INFO | app.routers.customers | PUT /customers/9999
+2026-05-10 14:41:01,144 | INFO | app.crud | Updating customer customerNumber=9999
+2026-05-10 14:41:01,144 | INFO | app.crud | Fetching customer customerNumber=9999
+2026-05-10 14:41:01,172 | INFO | app.database | Database session closed
+2026-05-10 14:43:03,730 | INFO | app.routers.customers | GET /customers?skip=0&limit=10
+2026-05-10 14:43:03,730 | INFO | app.crud | Listing customers skip=0 limit=10
+2026-05-10 14:43:03,772 | INFO | app.database | Database session closed
+2026-05-10 14:43:56,538 | INFO | app.routers.customers | GET /customers/9999
+2026-05-10 14:43:56,538 | INFO | app.crud | Fetching customer customerNumber=9999
+2026-05-10 14:43:56,545 | INFO | app.database | Database session closed
+2026-05-10 14:47:04,593 | INFO | app.database | Database engine created
+2026-05-10 14:47:04,619 | INFO | app.main | Creating database tables if missing
+2026-05-10 14:47:59,259 | INFO | app.routers.customers | POST /customers
+2026-05-10 14:47:59,259 | INFO | app.crud | Creating customer customerNumber=9999
+2026-05-10 14:47:59,281 | INFO | app.database | Database session closed
+2026-05-10 14:48:21,754 | INFO | app.routers.customers | POST /customers
+2026-05-10 14:48:21,754 | INFO | app.crud | Creating customer customerNumber=9999
+2026-05-10 14:48:21,760 | INFO | app.database | Database session closed
+2026-05-10 14:49:59,985 | INFO | app.database | Database engine created
+2026-05-10 14:50:00,061 | INFO | app.main | Creating database tables if missing
+2026-05-10 14:51:04,822 | INFO | app.routers.customers | DELETE /customers/999
+2026-05-10 14:51:04,822 | INFO | app.crud | Deleting customer customerNumber=999
+2026-05-10 14:51:04,823 | INFO | app.crud | Fetching customer customerNumber=999
+2026-05-10 14:51:04,851 | WARNING | app.crud | Customer customerNumber=999 not found for delete
+2026-05-10 14:51:04,851 | WARNING | app.routers.customers | Customer customerNumber=999 not found
+2026-05-10 14:51:04,853 | INFO | app.database | Database session closed
+2026-05-10 14:51:22,329 | INFO | app.routers.customers | DELETE /customers/9999
+2026-05-10 14:51:22,329 | INFO | app.crud | Deleting customer customerNumber=9999
+2026-05-10 14:51:22,329 | INFO | app.crud | Fetching customer customerNumber=9999
+2026-05-10 14:51:22,359 | INFO | app.database | Database session closed
+2026-05-10 14:51:37,495 | INFO | app.routers.customers | POST /customers
+2026-05-10 14:51:37,495 | INFO | app.crud | Creating customer customerNumber=9999
+2026-05-10 14:51:37,516 | INFO | app.database | Database session closed
+2026-05-10 14:51:46,618 | INFO | app.routers.customers | DELETE /customers/9999
+2026-05-10 14:51:46,618 | INFO | app.crud | Deleting customer customerNumber=9999
+2026-05-10 14:51:46,619 | INFO | app.crud | Fetching customer customerNumber=9999
+2026-05-10 14:51:46,630 | INFO | app.database | Database session closed
+2026-05-10 14:52:24,899 | INFO | app.database | Database engine created
+2026-05-10 14:52:24,928 | INFO | app.main | Creating database tables if missing
+2026-05-10 14:53:02,412 | INFO | app.database | Database engine created
+2026-05-10 14:53:02,441 | INFO | app.main | Creating database tables if missing
+2026-05-10 14:53:42,445 | INFO | app.routers.customers | GET /customers?skip=1&limit=2
+2026-05-10 14:53:42,445 | INFO | app.crud | Listing customers skip=1 limit=2
+2026-05-10 14:53:42,475 | INFO | app.database | Database session closed
+2026-05-10 14:54:15,849 | INFO | app.routers.customers | POST /customers
+2026-05-10 14:54:15,849 | INFO | app.crud | Creating customer customerNumber=9999
+2026-05-10 14:54:15,878 | INFO | app.database | Database session closed
+2026-05-10 14:54:36,916 | INFO | app.routers.customers | GET /customers/9999
+2026-05-10 14:54:36,917 | INFO | app.crud | Fetching customer customerNumber=9999
+2026-05-10 14:54:36,926 | INFO | app.database | Database session closed
+2026-05-10 14:55:09,212 | INFO | app.routers.customers | PUT /customers/9999
+2026-05-10 14:55:09,212 | INFO | app.crud | Updating customer customerNumber=9999
+2026-05-10 14:55:09,212 | INFO | app.crud | Fetching customer customerNumber=9999
+2026-05-10 14:55:09,245 | INFO | app.database | Database session closed
+2026-05-10 14:55:48,031 | INFO | app.routers.customers | GET /customers/9999/orders
+2026-05-10 14:55:48,032 | INFO | app.crud | Fetching customer customerNumber=9999
+2026-05-10 14:55:48,040 | INFO | app.database | Database session closed
+2026-05-10 14:56:10,003 | INFO | app.routers.customers | GET /customers/9999/payments
+2026-05-10 14:56:10,003 | INFO | app.crud | Fetching customer customerNumber=9999
+2026-05-10 14:56:10,011 | INFO | app.database | Database session closed
+2026-05-10 14:56:36,673 | INFO | app.routers.customers | DELETE /customers/9999
+2026-05-10 14:56:36,674 | INFO | app.crud | Deleting customer customerNumber=9999
+2026-05-10 14:56:36,674 | INFO | app.crud | Fetching customer customerNumber=9999
+2026-05-10 14:56:36,690 | INFO | app.database | Database session closed
+2026-05-10 15:22:00,123 | INFO | app.database | Database engine created
+2026-05-10 15:22:00,151 | INFO | app.main | Creating database tables if missing
+2026-05-10 15:22:41,823 | INFO | app.routers.customers | GET /customers/9999
+2026-05-10 15:22:41,823 | INFO | app.crud | Fetching customer customerNumber=9999
+2026-05-10 15:22:41,844 | WARNING | app.routers.customers | Customer customerNumber=9999 not found
+2026-05-10 15:22:41,846 | INFO | app.database | Database session closed
+2026-05-10 15:27:24,652 | INFO | app.routers.customers | GET /customers?skip=0&limit=10
+2026-05-10 15:27:24,660 | INFO | app.crud | Listing customers skip=0 limit=10
+2026-05-10 15:27:24,823 | INFO | app.database | Database session closed
