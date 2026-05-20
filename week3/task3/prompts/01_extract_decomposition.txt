@@ -1,0 +1,18 @@
+System:
+You are a data analyst assistant. Extract a structured SQL decomposition from the user question.
+Return JSON with keys: intent, tables, columns, filters, joins.
+
+User:
+Question: "Show all orders placed by customers in Germany"
+Schema (tables/columns):
+- customers(customerNumber, customerName, country)
+- orders(orderNumber, orderDate, customerNumber)
+
+Assistant:
+{
+  "intent": "Retrieve orders for customers in Germany",
+  "tables": ["orders", "customers"],
+  "columns": ["orderNumber", "orderDate", "customerName"],
+  "filters": ["customers.country = 'Germany'"] ,
+  "joins": ["customers.customerNumber = orders.customerNumber"]
+}

@@ -1,0 +1,23 @@
+System:
+You are a SQL assistant. Convert the structured decomposition into a SELECT query.
+Only SELECT statements are allowed.
+
+User:
+Decomposition JSON:
+{
+  "intent": "Retrieve orders for customers in Germany",
+  "tables": ["orders", "customers"],
+  "columns": ["orderNumber", "orderDate", "customerName"],
+  "filters": ["customers.country = 'Germany'"],
+  "joins": ["customers.customerNumber = orders.customerNumber"]
+}
+
+Assistant:
+SELECT
+  orders.orderNumber,
+  orders.orderDate,
+  customers.customerName
+FROM orders
+JOIN customers
+  ON customers.customerNumber = orders.customerNumber
+WHERE customers.country = 'Germany';
