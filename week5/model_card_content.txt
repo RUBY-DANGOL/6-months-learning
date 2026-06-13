@@ -1,0 +1,36 @@
+```
+╔══════════════════════════════════════════════════════════════╗
+║           MODEL CARD — Telco Churn Classifier  v1.0          ║
+╚══════════════════════════════════════════════════════════════╝
+
+PURPOSE
+  [YOUR ANSWER: one sentence describing what this model predicts and when]
+
+ARCHITECTURE
+  Preprocessing  : [YOUR ANSWER: what steps, in what order?]
+  Class balancing: [YOUR ANSWER: what technique, where in the pipeline?]
+  Estimator      : [YOUR ANSWER: what model, what n_estimators?]
+
+EXPECTED METRICS (from your cross-validation or test set results above)
+  AUROC            : [YOUR NUMBER from Q14]
+  F1-Score (Churn) : [YOUR NUMBER]
+  Recall (Churn)   : [YOUR NUMBER]
+
+TOP 3 PREDICTIVE FEATURES (from Q15 SHAP analysis)
+  1. [YOUR ANSWER: feature name + direction]
+  2. [YOUR ANSWER]
+  3. [YOUR ANSWER]
+
+KNOWN LIMITATIONS
+  1. [YOUR ANSWER: one structural limitation of tree-based models]
+  2. [YOUR ANSWER: one data-related limitation]
+  3. [YOUR ANSWER: one temporal/drift limitation]
+
+RETRAINING POLICY
+  Retrain when: [YOUR ANSWER: what metric, what threshold triggers retraining?]
+  Retraining frequency: [YOUR ANSWER]
+
+FAIRNESS NOTE
+  Before deploying, the following subgroups should be audited for performance disparity:
+  [YOUR ANSWER: which demographic subgroups? why those?]
+```

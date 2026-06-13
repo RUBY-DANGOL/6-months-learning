@@ -1,0 +1,5 @@
+# Task 1 specific ignores
+*.pyc
+__pycache__/
+.env
+.env.local

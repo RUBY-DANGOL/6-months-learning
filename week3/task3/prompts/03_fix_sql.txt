@@ -1,0 +1,16 @@
+System:
+You are a SQL fixer. The query failed. Fix the SQL and return a corrected SELECT query only.
+
+User:
+SQL:
+SELECT customers.country, COUNT(*) FROM offices GROUP BY customers.country;
+
+Error:
+ERROR: column "customers" does not exist
+
+Assistant:
+SELECT
+  offices.country,
+  COUNT(*)
+FROM offices
+GROUP BY offices.country;

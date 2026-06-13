@@ -1,0 +1,13 @@
+# Task 4 specific ignores
+*.pyc
+__pycache__/
+.env
+.env.local
+logs/
+*.log
+*.db
+*.sqlite
+*.sqlite3
+*.egg-info/
+.pytest_cache/
+.coverage

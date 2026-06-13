@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Concurrent Counts Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <p class="eyebrow">FastAPI + asyncio.gather</p>
+        <h1>Concurrent Counts</h1>
+        <p class="subhead">
+          Eight table counts, launched together, returned in one response.
+        </p>
+        <div class="hero-actions">
+          <button id="refresh" class="primary">Refresh Now</button>
+          <span id="latency" class="latency">Latency: -- ms</span>
+        </div>
+      </header>
+
+      <section class="cards" id="cards">
+        <div class="card skeleton"></div>
+        <div class="card skeleton"></div>
+        <div class="card skeleton"></div>
+        <div class="card skeleton"></div>
+        <div class="card skeleton"></div>
+        <div class="card skeleton"></div>
+        <div class="card skeleton"></div>
+        <div class="card skeleton"></div>
+      </section>
+
+      <section class="meta">
+        <div class="meta-block">
+          <h2>Endpoint</h2>
+          <code>/overall_counts</code>
+        </div>
+        <div class="meta-block">
+          <h2>Concurrency</h2>
+          <p>All eight queries run in parallel.</p>
+        </div>
+        <div class="meta-block">
+          <h2>Logging</h2>
+          <p>Requests, queries, and total time are tracked.</p>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const cardsEl = document.getElementById("cards");
+      const refreshBtn = document.getElementById("refresh");
+      const latencyEl = document.getElementById("latency");
+
+      const labels = {
+        customers: "Customers",
+        orders: "Orders",
+        products: "Products",
+        employees: "Employees",
+        offices: "Offices",
+        payments: "Payments",
+        orderdetails: "Order Details",
+        productlines: "Product Lines",
+      };
+
+      const renderCards = (data) => {
+        cardsEl.innerHTML = "";
+        Object.keys(labels).forEach((key, index) => {
+          const card = document.createElement("div");
+          card.className = "card";
+          card.style.animationDelay = `${index * 60}ms`;
+          card.innerHTML = `
+            <div class="card-label">${labels[key]}</div>
+            <div class="card-value">${data[key] ?? 0}</div>
+          `;
+          cardsEl.appendChild(card);
+        });
+      };
+
+      const fetchCounts = async () => {
+        const start = performance.now();
+        latencyEl.textContent = "Latency: -- ms";
+        try {
+          const response = await fetch("/overall_counts");
+          if (!response.ok) {
+            throw new Error("Request failed");
+          }
+          const data = await response.json();
+          const elapsed = Math.round(performance.now() - start);
+          renderCards(data);
+          latencyEl.textContent = `Latency: ${elapsed} ms`;
+        } catch (err) {
+          cardsEl.innerHTML = `
+            <div class="error">
+              Could not load counts. Check logs for details.
+            </div>
+          `;
+          latencyEl.textContent = "Latency: -- ms";
+        }
+      };
+
+      refreshBtn.addEventListener("click", fetchCounts);
+      fetchCounts();
+    </script>
+  </body>
+</html>
