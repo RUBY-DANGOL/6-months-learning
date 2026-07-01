@@ -20,7 +20,7 @@ env/
 .env/
 
 # Data files (raw data - uncomment if needed)
-# *.csv
+*.csv
 # *.xlsx
 # *.xls
 # *.json
