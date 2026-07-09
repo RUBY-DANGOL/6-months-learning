@@ -1,0 +1,5 @@
+matplotlib>=3.8
+numpy>=1.26
+optuna>=3.6
+torch>=2.3
+torchvision>=0.18

@@ -9,6 +9,10 @@ build/
 .pytest_cache/
 *.so
 
+#output
+week9/outputs_cuda
+week9/dataset
+
 # Jupyter
 .ipynb_checkpoints/
 *.ipynb~*
@@ -18,6 +22,8 @@ venv/
 .venv/
 env/
 .env/
+.conda-env/
+
 
 # Data files (raw data - uncomment if needed)
 *.csv
