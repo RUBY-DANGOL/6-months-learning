@@ -12,6 +12,7 @@ build/
 #output
 week9/outputs_cuda
 week9/dataset
+week10/datasets
 
 # Jupyter
 .ipynb_checkpoints/
