@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickVision AI Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <p class="eyebrow">Warehouse CV Rollout</p>
+      <h1>QuickVision AI Model Comparison</h1>
+      <p class="lede">
+        A lightweight front-end companion for the Week 11 notebook, focused on the
+        business decision between HSV rules, fine-tuned ResNet-50, and CLIP zero-shot onboarding.
+      </p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Known Products</h2>
+        <p>Primary recommendation: fine-tuned ResNet-50 for labeled SKUs.</p>
+        <div class="metric-row">
+          <span>Expected strength</span>
+          <strong>Higher classification accuracy</strong>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>New Products</h2>
+        <p>Use CLIP for zero-shot predictions while labeled examples are collected.</p>
+        <div class="metric-row">
+          <span>Onboarding cost</span>
+          <strong>Text prompt only</strong>
+        </div>
+      </article>
+
+      <article class="card accent">
+        <h2>Operations</h2>
+        <p>Export the supervised model to ONNX for production-friendly deployment.</p>
+        <button id="toggleDetails">Show rollout checklist</button>
+      </article>
+    </section>
+
+    <section class="panel hidden" id="detailsPanel">
+      <h2>Rollout Checklist</h2>
+      <ul>
+        <li>Create the CUDA-ready environment from <code>environment.yml</code>.</li>
+        <li>Run the notebook end to end on GPU if available.</li>
+        <li>Validate the ONNX export output shape and latency.</li>
+        <li>Use CLIP as a temporary path for unseen SKUs.</li>
+        <li>Retrain ResNet-50 after enough labeled images are collected.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

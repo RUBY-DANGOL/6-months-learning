@@ -1,0 +1,21 @@
+name: week11-cv-cuda
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pytorch
+  - torchvision
+  - pytorch-cuda=12.1
+  - notebook
+  - jupyterlab
+  - matplotlib
+  - numpy
+  - pandas
+  - pillow
+  - onnxruntime
+  - timm
+  - pip
+  - pip:
+      - git+https://github.com/openai/CLIP.git
