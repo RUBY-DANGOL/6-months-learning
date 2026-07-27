@@ -10,51 +10,111 @@
   <main class="shell">
     <section class="hero">
       <p class="eyebrow">Warehouse CV Rollout</p>
-      <h1>QuickVision AI Model Comparison</h1>
+      <h1>QuickVision AI ONNX Deployment</h1>
       <p class="lede">
-        A lightweight front-end companion for the Week 11 notebook, focused on the
-        business decision between HSV rules, fine-tuned ResNet-50, and CLIP zero-shot onboarding.
+        A browser-based demo that loads the exported ResNet-50 CIFAR-10 model and runs
+        image classification directly in the page.
       </p>
     </section>
 
     <section class="grid">
       <article class="card">
-        <h2>Known Products</h2>
-        <p>Primary recommendation: fine-tuned ResNet-50 for labeled SKUs.</p>
+        <h2>Model</h2>
+        <p>Fine-tuned ResNet-50 exported to ONNX for browser inference.</p>
         <div class="metric-row">
-          <span>Expected strength</span>
-          <strong>Higher classification accuracy</strong>
+          <span>Asset</span>
+          <strong>resnet50_cifar10.onnx</strong>
         </div>
       </article>
 
       <article class="card">
-        <h2>New Products</h2>
-        <p>Use CLIP for zero-shot predictions while labeled examples are collected.</p>
+        <h2>Browser Runtime</h2>
+        <p>ONNX Runtime Web executes the model with a WASM backend.</p>
         <div class="metric-row">
-          <span>Onboarding cost</span>
-          <strong>Text prompt only</strong>
+          <span>Input</span>
+          <strong>224 x 224 RGB</strong>
         </div>
       </article>
 
       <article class="card accent">
-        <h2>Operations</h2>
-        <p>Export the supervised model to ONNX for production-friendly deployment.</p>
+        <h2>Deployment</h2>
+        <p>Upload an image and run inference locally in the browser.</p>
         <button id="toggleDetails">Show rollout checklist</button>
+      </article>
+    </section>
+
+    <section class="workspace">
+      <article class="card panel-card">
+        <div class="card-header">
+          <div>
+            <p class="section-kicker">Inference</p>
+            <h2>Classify an image</h2>
+          </div>
+          <span class="status-pill" id="modelStatus">Model not loaded</span>
+        </div>
+
+        <p class="supporting-text">
+          Upload a warehouse camera frame or a CIFAR-like image. The app will normalize the
+          input with the same ImageNet statistics used during training.
+        </p>
+
+        <label class="upload-zone" for="imageInput">
+          <input id="imageInput" type="file" accept="image/*">
+          <span class="upload-title">Drop an image here or choose a file</span>
+          <span class="upload-subtitle">The model is loaded from <strong>./resnet50_cifar10.onnx</strong>.</span>
+        </label>
+
+        <div class="preview-shell">
+          <canvas id="previewCanvas" width="224" height="224" aria-label="Image preview"></canvas>
+          <div class="preview-hint" id="previewHint">No image selected yet.</div>
+        </div>
+
+        <div class="action-row">
+          <button id="loadModelButton" class="secondary-button" type="button">Load model</button>
+          <button id="runButton" type="button" disabled>Run inference</button>
+        </div>
+
+        <p class="status-line" id="statusLine">Open this page through a local web server to enable model loading.</p>
+      </article>
+
+      <article class="card panel-card results-card">
+        <div class="card-header">
+          <div>
+            <p class="section-kicker">Results</p>
+            <h2>Prediction summary</h2>
+          </div>
+        </div>
+
+        <div class="prediction-banner" id="predictionBanner">Awaiting inference.</div>
+
+        <ol class="prediction-list" id="predictionList"></ol>
+
+        <div class="metric-stack">
+          <div>
+            <span>Latency</span>
+            <strong id="latencyValue">-- ms</strong>
+          </div>
+          <div>
+            <span>Top class</span>
+            <strong id="topClassValue">--</strong>
+          </div>
+        </div>
       </article>
     </section>
 
     <section class="panel hidden" id="detailsPanel">
       <h2>Rollout Checklist</h2>
       <ul>
-        <li>Create the CUDA-ready environment from <code>environment.yml</code>.</li>
-        <li>Run the notebook end to end on GPU if available.</li>
-        <li>Validate the ONNX export output shape and latency.</li>
-        <li>Use CLIP as a temporary path for unseen SKUs.</li>
-        <li>Retrain ResNet-50 after enough labeled images are collected.</li>
+        <li>Serve the week11 folder from a local HTTP server so the browser can fetch the ONNX file.</li>
+        <li>Check that ONNX Runtime Web loads before running the first inference.</li>
+        <li>Validate the output logits against the CIFAR-10 class order.</li>
+        <li>Use the notebook metrics as the reference for accuracy and deployment reporting.</li>
+        <li>Keep the exported model with the web assets for a self-contained demo.</li>
       </ul>
     </section>
   </main>
 
+  <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

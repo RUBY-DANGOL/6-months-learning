@@ -13,6 +13,8 @@ build/
 week9/outputs_cuda
 week9/dataset
 week10/datasets
+data
+
 
 # Jupyter
 .ipynb_checkpoints/
@@ -24,6 +26,7 @@ venv/
 env/
 .env/
 .conda-env/
+week11/.venv/
 
 
 # Data files (raw data - uncomment if needed)
@@ -57,3 +60,7 @@ Desktop.ini
 # Environment variables
 .env.local
 .env.*
+
+week11/web/resnet50_cifar10.onnx
+
+week11/tools
