@@ -3,10 +3,7 @@
 This workspace is set up to keep the model training and AI work in the notebook, the presentation layer in HTML/CSS/JS, and the process documentation in Markdown.
 
 ## Screen Recording
-
-- [Watch the screen recording](Screen%20Recording%202026-07-27%20081321.mp4)
-
-
+https://github.com/user-attachments/assets/ac79f09b-0563-4d35-9bd7-4ae03332c722
 ## Files
 
 - `W11_CV_Assignment_Notebook.ipynb`: main assignment notebook with Q1-Q20 implementations
