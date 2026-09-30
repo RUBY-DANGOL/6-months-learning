@@ -1,0 +1,56 @@
+{
+  "labels": [
+    "ACCOUNT",
+    "CANCEL",
+    "CONTACT",
+    "DELIVERY",
+    "FEEDBACK",
+    "INVOICE",
+    "ORDER",
+    "PAYMENT",
+    "REFUND",
+    "SHIPPING",
+    "SUBSCRIPTION"
+  ],
+  "max_length": 64,
+  "test_size": 2688,
+  "metrics": {
+    "onnx fp32": {
+      "accuracy": 0.9996279761904762,
+      "precision": 0.9995408631772268,
+      "recall": 0.9997721576668946,
+      "macro_f1": 0.9996557862987353,
+      "latency_ms": 9.6,
+      "size_mb": 268.0
+    },
+    "onnx int8": {
+      "accuracy": 0.9996279761904762,
+      "precision": 0.9995408631772268,
+      "recall": 0.9997721576668946,
+      "macro_f1": 0.9996557862987353,
+      "latency_ms": 3.88,
+      "size_mb": 67.4
+    }
+  },
+  "fp32_int8_agreement": 1.0,
+  "free_form": {
+    "accuracy": 0.6285714285714286,
+    "precision": 0.6909090909090908,
+    "recall": 0.6863636363636364,
+    "macro_f1": 0.657142857142857
+  },
+  "abstain": {
+    "energy_threshold": 2.509,
+    "calibrated_on": "free-form paraphrases, minimum minus margin",
+    "margin": 0.25,
+    "test_set_kept": 1.0,
+    "paraphrases_kept": 1.0,
+    "out_of_domain_rejected": 0.0652,
+    "test_energy_p1": 6.702,
+    "paraphrase_energy_min": 2.759,
+    "paraphrase_energy_median": 5.618,
+    "out_of_domain_energy_max": 6.512,
+    "out_of_domain_energy_median": 3.292,
+    "overlap": true
+  }
+}

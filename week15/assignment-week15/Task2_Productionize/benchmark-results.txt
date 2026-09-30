@@ -1,0 +1,45 @@
+Benchmark: scripts/bench.py, concurrency 4, two rounds, caches cleared before each run
+Machine:   Windows 11 laptop, NVIDIA RTX 3060 6 GB, Ollama serving natively on the GPU,
+           API / Qdrant / Redis / UI in Docker Desktop
+
+=== qwen2.5:1.5b (default) ===
+readiness: {"ready": true, "llm": true, "redis": true, "indexed_chunks": 22, "router": true}
+time to first token: 421ms
+
+cold run, concurrency 4
+latency: n=8 p50=701ms p95=2625ms max=2625ms
+requests/second: 3.04   failures: 0
+
+warm run, same questions (cache should hit)
+latency: n=4 p50=6ms p95=7ms max=7ms
+requests/second: 519.33   cache hits: 4/4
+
+batch endpoint
+4 answers in 5ms
+
+=== qwen2.5:0.5b ===
+time to first token: 311ms
+
+cold run, concurrency 4
+latency: n=8 p50=1253ms p95=3969ms max=3969ms
+requests/second: 2.01   failures: 0
+
+warm run, same questions (cache should hit)
+latency: n=4 p50=7ms p95=7ms max=7ms
+requests/second: 449.33   cache hits: 4/4
+
+batch endpoint
+4 answers in 6ms
+
+=== support router (week 14 model), ml/router.py ===
+held-out test set, 2688 messages
+graph         accuracy  precision   recall  macro-F1      ms      MB
+onnx fp32       0.9996     0.9995   0.9998    0.9997    9.82   268.0
+onnx int8       0.9996     0.9995   0.9998    0.9997    3.99    67.4
+fp32/int8 prediction agreement: 1.0000
+free-form paraphrases (35, hand-written): accuracy 0.629, macro-F1 0.657
+served through the API: 3.0 ms p50, 4.6 ms p95
+
+=== reliability, measured ===
+degraded reply with model server stopped, before circuit breaker:  ~17,000 ms
+degraded reply with model server stopped, after circuit breaker:      ~100 ms
