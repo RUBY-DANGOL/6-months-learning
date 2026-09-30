@@ -12,6 +12,10 @@ This extends the Week 15 customer-support assistant in `source/`. Its existing `
 | [Evaluation results](evaluation-results.md) | Generated metrics, failure log, and trajectories |
 | [Executed notebook](agent_demo.ipynb) | Step-by-step loop demonstration |
 
+## Screen recording
+
+[Watch the Week 16 screen recording](screen-recording-week16.mp4).
+
 **Why a fixed pipeline is insufficient:** A search may return no evidence, incomplete evidence, or conflicting policy snippets, so the next query, answer, or clarification must depend on what the previous search found.
 
 ## Run
