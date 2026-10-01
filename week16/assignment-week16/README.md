@@ -1,5 +1,10 @@
 # Week 16 — Agentify the shop assistant
 
+
+
+https://github.com/user-attachments/assets/53d5d144-3ee5-4478-928a-ebd321cf51f2
+
+
 This extends the Week 15 customer-support assistant in `source/`. Its existing `/chat`, routing, retrieval, tool, ingestion, streaming, cache, and UI paths remain available. The new `/verify` endpoint checks a policy question against the indexed corpus.
 
 ## Documentation
