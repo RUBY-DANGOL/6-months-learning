@@ -1,0 +1,21 @@
+{
+  "model_name": "TelcoChurnClassifier",
+  "version": "2",
+  "run_id": "1f3afe1bd32843a987464bc93cef0f94",
+  "transitions": [
+    "staging",
+    "production"
+  ],
+  "aliases": [
+    "staging",
+    "champion"
+  ],
+  "selection_metric": "f1",
+  "selected_metrics": {
+    "accuracy": 0.7649063032367973,
+    "precision": 0.5391432791728212,
+    "recall": 0.7815845824411135,
+    "f1": 0.6381118881118881,
+    "roc_auc": 0.8447752598883332
+  }
+}

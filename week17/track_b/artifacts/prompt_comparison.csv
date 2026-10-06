@@ -1,0 +1,4 @@
+run_id,prompt_version,pct_tests_passed,avg_iterations,simulated_total_tokens,promoted
+1b8b4cf968bc4824b9f41288f80a5a0a,prompt_v1,0.0,1.5,330,False
+10f12d64174343dd879db394bc227090,prompt_v2,75.0,1.75,385,False
+15967fb9a0c141fa953dc71008970f89,prompt_v3,100.0,1.75,385,True

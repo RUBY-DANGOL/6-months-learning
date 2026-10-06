@@ -1,0 +1,32 @@
+[
+  {
+    "id": "cancel_after_shipping",
+    "query": "Can I cancel an order after it ships?",
+    "reference": "No. Shipped orders cannot be cancelled. [CANCEL.md]",
+    "evidence": [{"source": "CANCEL.md", "text": "Shipped orders cannot be cancelled."}],
+    "required_terms": ["cannot", "cancelled", "CANCEL.md"]
+  },
+  {
+    "id": "refund_timing",
+    "query": "When will my approved refund arrive?",
+    "reference": "Approved refunds are returned within 5–10 business days. [REFUND.md]",
+    "evidence": [{"source": "REFUND.md", "text": "Approved refunds are returned within 5–10 business days."}],
+    "required_terms": ["5–10", "business days", "REFUND.md"]
+  },
+  {
+    "id": "ambiguous_change",
+    "query": "Can I change it?",
+    "reference": "Please clarify whether you mean an order, delivery address, account, or subscription.",
+    "evidence": [],
+    "required_terms": ["clarify"]
+  },
+  {
+    "id": "tool_failure",
+    "query": "What is the return deadline?",
+    "reference": "I cannot verify the return deadline because policy search is unavailable; please try later or contact a human advisor.",
+    "evidence": [],
+    "tool_error": "TimeoutError",
+    "required_terms": ["cannot verify", "unavailable"]
+  }
+]
+

@@ -1,0 +1,6 @@
+{
+  "selected": "prompt_v3",
+  "gate": "pct_tests_passed == 100",
+  "decision": "promote",
+  "rationale": "Highest regression pass rate; token cost breaks ties."
+}
